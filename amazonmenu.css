@@ -1,0 +1,94 @@
+.amazonmenu ul{
+	font: normal 12px Verdana;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
+
+.amazonmenu ul li{
+	position: static; /* menu li items should have position set to static */
+}
+
+.amazonmenu > ul{
+	background: white;
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 200px; /* width of main menu */
+	height: 400px; /* height of main menu */
+	position: relative;
+}
+
+.amazonmenu > ul li a{
+	color: black;
+	display: block;
+	overflow: auto;
+	padding: 10px 0;
+	position: relative;
+	text-decoration: none;
+	text-indent: 10px;
+}
+
+.amazonmenu > ul li.hassub > a::after{ /* Arrow to indicate this item has sub menu (LI elements with sub menus have a ".hassub" class). */
+	border: 5px solid transparent;
+	border-left-color: gray; /* Default color of arrow */
+	content: '';
+	height: 0;
+	position: absolute;
+	right: 5px;
+	top: 35%;
+	width: 0;
+}
+
+.amazonmenu > ul li.hassub.selected > a::after{ /* Style of arrow when corresponding sub menu is open (LI element has a "selected" class during this state */
+	border-left-color: red;
+}
+
+.amazonmenu ul li a:hover, .amazonmenu ul li.hassub.selected > a{ /* style of hover and selected menu item links */
+	background: lightblue;
+	color: navy;
+}
+
+.amazonmenu ul li > div, .amazonmenu ul li > ul{ /* Sub menus (Could be a DIV or UL wrapper) style */
+	background: white;
+	border: 1px solid gray;
+	border-radius: 0 8px 8px 0;
+	box-shadow: 2px 2px 2px gray;
+	display: none;
+	font-weight: normal;
+	width: 300px;
+	height: 400px; /* height of sub menu */
+	left: 100%;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 1000;
+}
+
+
+/* ###### CSS Media queries ###### */
+
+@media screen and (max-width: 480px){ /* When screen size is 480px */
+	.amazonmenu ul li > div, .amazonmenu ul li > ul{
+		left: 30px; /* Stack the sub menus so they take up less space */
+	}
+
+	.amazonmenu > ul li.hassub.selected::after{ /* Add "veil" to parent menus */
+		background: #eee;
+		content: '';
+		height: 100%;
+		left: 0;
+		opacity: .8;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+}
