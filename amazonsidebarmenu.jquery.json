@@ -3,10 +3,10 @@
   "title": "Amazon Side Bar Menu",
   "description": "This menu models itself after the side bar menu found on Amazon.com to provide a flexible, content-rich fold out menu. It supports infinite number of sub menus. In addition, the menu is responsive in smaller screen and mobile devices, by stacking the sub levels when revealed on top of its parent to conserve space. A robust menu this is, and across multiple platforms!",
   "keywords": ["menu", "navigation", "multiple", "dropdown"],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "JavaScript Kit",
-    "email" : "george077@@gmail.com",
+    "email" : "george077@gmail.com",
 		"url": "http://www.javascriptkit.com"
   },
   "licenses": [
